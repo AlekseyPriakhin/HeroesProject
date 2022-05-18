@@ -13,7 +13,15 @@ public class MapStorage : IMapStorage
 
     private void ReadMapsFile()
     {
-        var file = "Data/maps.csv";
+        _maps.Add("kings row",new Map{Name = "Kings Row",Country = "UK",GameMode = "Hybrid"}); 
+        _maps.Add("route 66",new Map{Name = "Route 66",Country = "USA",GameMode = "Payload"}); 
+        _maps.Add("ilios",new Map{Name = "Ilios",Country = "Greece",GameMode = "Control"});
+        _maps.Add("junkertown",new Map{Name = "Junkertown",Country = "Australia",GameMode = "Payload"}); 
+        _maps.Add("paris",new Map{Name = "Paris",Country = "France",GameMode = "Capture"});
+        
+        
+        
+        /*var file = "Data/maps.csv";
         foreach (var line in File.ReadAllLines(file))
         {
             var tokens = line.Split(",");
@@ -24,7 +32,7 @@ public class MapStorage : IMapStorage
                 Country = tokens[2]
             };
             _maps[tokens[0].ToLower()] = map;
-        }
+        }*/
     }
     
     public ICollection<Map> ListMaps()
